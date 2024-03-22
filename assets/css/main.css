@@ -1,0 +1,126 @@
+:root {
+     font-family: "Work Sans", sans-serif;
+     font-optical-sizing: auto;
+     font-style: normal;
+     --white: hsl(0, 0%, 100%);
+     --light-pink: hsl(275, 100%, 97%);
+     --grayish-purple: hsl(292, 16%, 49%);
+     --dark-purple: hsl(292, 42%, 14%);
+}
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+.flex {
+     display: flex;
+}
+
+.items-center {
+     align-items: center;
+}
+
+body {
+     min-height: 100vh;
+     display: flex;
+     background: var(--light-pink) url('../images/background-pattern-mobile.svg');
+     background-repeat: no-repeat;
+     background-position: top;
+     background-size: 100%;
+     padding: 20px;
+}
+
+
+main {
+     background-color: var(--white);
+     width: 100%;
+     margin: auto;
+     padding: 25px;
+     flex-direction: column;
+     gap: 20px;
+     border-radius: 10px;
+}
+
+.logo {
+     gap: 25px;
+     color: var(--dark-purple);
+}
+
+.logo img {
+     width: 30px;
+}
+
+
+.accordion .question {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 20px;
+}
+
+.accordion .question h2 {
+     font-size: 15.5px;
+     color: var(--dark-purple);
+}
+
+.accordion .question h2:hover {
+     color: var(--grayish-purple);
+}
+
+.accordion .question button {
+     background-color: transparent;
+     border: 0;
+     cursor: pointer;
+}
+
+.accordion .answer {
+     color: var(--grayish-purple);
+     font-size: 14px;
+     font-weight: 400;
+     padding-top: 20px;
+     transform-origin: top center;
+     animation: open-accordion 500ms forwards;
+}
+
+.accordion .answer.hide {
+     display: none;
+}
+
+hr {
+     border: 0;
+     border-top: 1px solid var(--light-pink);
+}
+
+@media screen and (min-width: 568px) {
+     main {
+          max-width: 544px;
+     }
+}
+
+@media screen and (min-width: 1024px) {
+     body {
+          min-height: 100vh;
+          display: flex;
+          background: var(--light-pink) url('../images/background-pattern-desktop.svg');
+          background-repeat: no-repeat;
+          background-position: top;
+          background-size: 100%;
+     }
+     
+}
+
+@keyframes open-accordion {
+     0% {
+          transform: scaleY(0);
+     }
+
+     80% {
+          transform: scaleY(1.2);
+     }
+
+     100% {
+          transform: scaleY(1);
+     }
+}
